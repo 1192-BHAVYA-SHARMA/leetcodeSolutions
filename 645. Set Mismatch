@@ -1,0 +1,20 @@
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int i=0;
+        int n = nums.length;
+        while(i<n){
+            int c= nums[i]-1;
+            if(nums[i] != nums[c]){
+                int temp = nums[i];
+                nums[i]=nums[c];
+                nums[c]= temp;
+            }else{i++;}
+        }
+        for(int k=0;k<n;k++){
+            if(nums[k] != k+1){
+                return new int[] { nums[k],k+1};
+            }
+        }
+        return new int[]{-1,-1};
+    }
+}
