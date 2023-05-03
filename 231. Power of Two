@@ -1,0 +1,11 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n<=0){return false;}
+        else if((n &(n-1))==0){ return true;}//8=1000 & 7=0111------ans=0 bcz for
+        // any power of 2 ,1 followed by 0s and its n-1 will  have all 1s except leftmost as 0 so 
+        //there and will be zero  
+        else{return false;}
+        
+        
+    }
+}
