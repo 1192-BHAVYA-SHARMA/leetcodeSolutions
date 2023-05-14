@@ -1,0 +1,21 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        
+        int i=0;
+        int n=nums.length;
+        while(i<n){
+            int c = nums[i];//correct position of any element: index=value
+            if(nums[i]< n &&  nums[i] != nums[c]){
+                //swap
+                int temp=nums[i];
+                nums[i]=nums[c];
+                nums[c]= temp;
+            }else{i++;}
+            
+        }
+        for(int k=0;k<n;k++){//case 1 if any element don't match index'
+                if(nums[k] != k){ return k;}
+        }
+        return n;//case 2 if n itself is missing
+    }
+}
